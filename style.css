@@ -95,17 +95,23 @@ html, body { height: 100%; }
   padding: 18px;
 }
 
-/* Your photo goes here */
 .photo-bg{
   position: absolute;
-  inset: 0;
+  inset: clamp(14px, 4vw, 28px);
+
   background-image: url("assets/images/rose.png");
-  background-size: cover;
-  background-position: center;
+  background-repeat: no-repeat;
+
+  /* ✅ make it tall */
+  background-size: auto 70%;
+
+  /* ✅ keep it centered (or slightly up) */
+  background-position: center 45%;
+
   filter: saturate(1.15) contrast(1.05);
-  transform: scale(1.02);
   z-index: 0;
 }
+
 
 /* Romantic overlay color */
 .photo-bg::after{
@@ -206,7 +212,14 @@ html, body { height: 100%; }
 }
 
 /* iPhone-friendly spacing */
-@media (max-width: 420px){
+@media (max-width: 480px){
   .poem-card{ padding: 18px 14px; border-radius: 24px; }
   .home-card{ padding: 20px 14px; border-radius: 24px; }
+}
+
+@media (max-width: 480px){
+  .main{
+    padding: 28px 18px;          /* a bit more top/bottom */
+    background-size: 92% auto;   /* rose slightly smaller */
+  }
 }
