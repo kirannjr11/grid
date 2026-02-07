@@ -1,0 +1,225 @@
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* Romantic background gradient */
+.romantic-bg{
+  min-height: 100dvh; /* better on mobile */
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(255, 99, 166, .45), transparent 60%),
+    radial-gradient(900px 600px at 80% 20%, rgba(255, 165, 210, .35), transparent 60%),
+    radial-gradient(900px 700px at 50% 90%, rgba(168, 120, 255, .35), transparent 60%),
+    linear-gradient(135deg, #120012, #21001a 35%, #0b0014);
+  overflow: hidden;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 14px 18px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: transform .15s ease, filter .15s ease, box-shadow .2s ease;
+  user-select: none;
+}
+
+.btn:active{ transform: scale(.98); }
+
+.btn.romantic{
+  color: #fff;
+  background: linear-gradient(135deg, #ff2e88, #ff6bd6 45%, #a66bff);
+  box-shadow: 0 14px 35px rgba(255, 46, 136, .35);
+}
+
+.btn.romantic:hover{
+  filter: brightness(1.05);
+  box-shadow: 0 16px 42px rgba(255, 46, 136, .45);
+}
+
+.btn.ghost{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  box-shadow: none;
+}
+
+/* ---------- Index (Home) ---------- */
+.home{
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.home-card{
+  width: min(92vw, 440px);
+  padding: 22px 18px;
+  border-radius: 26px;
+  position: relative;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0,0,0,.35);
+}
+
+.home-glow{
+  position: absolute;
+  inset: -2px;
+  border-radius: 28px;
+  background: radial-gradient(circle at 30% 20%, rgba(255, 99, 166, .55), transparent 50%),
+              radial-gradient(circle at 80% 30%, rgba(166, 107, 255, .45), transparent 55%);
+  filter: blur(18px);
+  z-index: -1;
+}
+
+.home-title{
+  font-size: clamp(24px, 6vw, 34px);
+  margin-bottom: 10px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.home-sub{
+  opacity: .92;
+  font-size: clamp(14px, 3.8vw, 16px);
+  margin-bottom: 16px;
+}
+
+/* ---------- Main (Photo + Poem) ---------- */
+.main{
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.photo-bg{
+  position: absolute;
+  inset: clamp(14px, 4vw, 28px);
+
+  background-image: url("assets/images/rose.png");
+  background-repeat: no-repeat;
+
+  /* ✅ make it tall */
+  background-size: auto 70%;
+
+  /* ✅ keep it centered (or slightly up) */
+  background-position: center 45%;
+
+  filter: saturate(1.15) contrast(1.05);
+  z-index: 0;
+}
+
+
+/* Romantic overlay color */
+.photo-bg::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(180deg, rgba(18,0,18,.35), rgba(18,0,18,.75)),
+    radial-gradient(800px 500px at 30% 20%, rgba(255, 46, 136, .35), transparent 55%),
+    radial-gradient(900px 600px at 80% 70%, rgba(166, 107, 255, .30), transparent 60%);
+}
+
+/* Poem card */
+.poem-wrap{
+  width: min(94vw, 520px);
+  z-index: 2;
+}
+
+.poem-card{
+  position: relative;
+  padding: 22px 18px;
+  border-radius: 28px;
+  /* background: rgba(255,255,255,.10); */
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.20);
+  /* backdrop-filter: blur(12px); */
+  box-shadow: 0 30px 90px rgba(0,0,0,.45);
+  text-align: center;
+}
+
+.poem-glow{
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  background: radial-gradient(circle at 25% 20%, rgba(255, 99, 166, .55), transparent 55%),
+              radial-gradient(circle at 75% 80%, rgba(166, 107, 255, .45), transparent 60%);
+  filter: blur(22px);
+  z-index: -1;
+}
+
+.poem-title{
+  font-size: clamp(26px, 6.5vw, 44px);
+  letter-spacing: .4px;
+  text-shadow: 0 10px 30px rgba(0,0,0,.45);
+  margin-bottom: 12px;
+}
+
+.poem-text{
+  font-size: clamp(15px, 4.1vw, 18px);
+  line-height: 1.7;
+  opacity: .95;
+  padding: 2px 10px;
+  text-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+.poem-sign{
+  margin-top: 12px;
+  opacity: .95;
+  font-size: 18px;
+}
+
+.actions{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* ---------- Floating hearts ---------- */
+.hearts{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heart{
+  position: absolute;
+  bottom: -40px;
+  font-size: 22px;
+  opacity: .55;
+  filter: drop-shadow(0 10px 16px rgba(0,0,0,.25));
+  animation: floatUp 7s linear infinite;
+}
+
+.h1{ left: 12%; animation-duration: 7.5s; font-size: 18px; }
+.h2{ left: 30%; animation-duration: 6.2s; font-size: 22px; }
+.h3{ left: 55%; animation-duration: 8.1s; font-size: 26px; }
+.h4{ left: 74%; animation-duration: 6.8s; font-size: 20px; }
+.h5{ left: 88%; animation-duration: 7.9s; font-size: 24px; }
+
+@keyframes floatUp{
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: .55; }
+  50%  { transform: translateY(-55vh) translateX(-12px) rotate(-10deg); }
+  100% { transform: translateY(-110vh) translateX(10px) rotate(12deg); opacity: 0; }
+}
+
+/* iPhone-friendly spacing */
+@media (max-width: 480px){
+  .poem-card{ padding: 18px 14px; border-radius: 24px; }
+  .home-card{ padding: 20px 14px; border-radius: 24px; }
+}
+
+@media (max-width: 480px){
+  .main{
+    padding: 28px 18px;          /* a bit more top/bottom */
+    background-size: 92% auto;   /* rose slightly smaller */
+  }
+}
