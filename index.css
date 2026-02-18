@@ -1,12 +1,5 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(4, 80px);
-  gap:10px;
-
-}
-
-.item{
-  height: 80px;
-  background-color: lightblue;
-  width: 100%;
+.box{
+  height:80px;
+  width:80px;
+  background:blue;
 }
