@@ -1,30 +1,44 @@
-var tl = gsap.timeline();
+gsap.from(".page1 .box", {
+  scale: 2,
+  duration: 3,
+  delay: 2,
 
-tl.to(".box1", {
-x:1000,
-duration: 3,
-backgroundColor: "white",
-height:"200px",
-width:"200px",
-rotate:360,
-borderRadius: "50%",
-scale:2,
+  backgroundColor: "pink",
+  rotate: 360,
+  yoyo: true,
+  borderRadius: "50%",
+});
 
-yoyo: true
+gsap.from(".page2 .box", {
+  scale: 2,
+  duration: 3,
 
-}) 
+  backgroundColor: "pink",
+  rotate: 360,
+  yoyo: true,
+  borderRadius: "80%",
+  scrollTrigger: {
+    trigger: ".page2 .box",
+    scroller: "body",
+    markers: true,
+    start: "top 50%",
+  },
+});
 
-tl.from(".box2", {
-x:1500,
-y: 500,
-duration: 3,
-backgroundColor: "white",
+gsap.from(".page3 .box", {
+  scale: 2,
+  duration: 3,
+  
 
-}) 
+  backgroundColor: "pink",
+  rotate: 360,
+  yoyo: true,
+  borderRadius: "50%",
 
-tl.from("h1", {
-    opacity: 0,
-    duration:1,
-    y:30,
-    stagger:1
-})
+  scrollTrigger: {
+    trigger: ".page3 .box",
+    scrolller: "body",
+    markers: "true",
+    start: "top 50%",
+  },
+});

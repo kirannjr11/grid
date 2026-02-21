@@ -15,18 +15,35 @@ body {
 }
 
 
-.box1 {
-    display: flex;
-    height: 400px;
-    width: 400px;
-    background-color: burlywood;
-    align-items: center;
-    justify-content: center;
-
+.page1{
+height:100%;
+width:100%;
+background-color: aliceblue;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.box2 {
-    height: 400px;
-    width: 400px;
-    background-color: burlywood;
+.page2{
+height:100%;
+width:100%;
+background-color:lightblue;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.page3{
+height:100%;
+width:100%;
+background-color:beige;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.box{
+    height:400px;
+    width:400px;
+    background-color: aquamarine;
 }
