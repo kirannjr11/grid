@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Gilroy', sans-serif;
-    color:aliceblue
+    color: aliceblue
 }
 
 html,
@@ -15,13 +15,21 @@ body {
 }
 
 
-#string{
+#string {
     height: 300px;
     width: 100%;
     background-color: aqua;
 }
 
-#string svg  {
+#string svg {
     width: 100%;
     height: 100%;
+}
+
+.mouse {
+    height: 30px;
+    width: 30px;
+    background-color: white;
+    position: fixed;
+    border-radius: 50%;
 }
